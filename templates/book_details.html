@@ -1,0 +1,22 @@
+{% extends "base.html" %} 
+
+    {% block content %} 
+
+        <h1>Book details</h1>
+
+        <div class="book_details">
+            <h2>Title: {{ book.title }}</h2>
+            <h2>Author: {{ book.author }}</h2>
+            <h2>Genre: {{ book.genre }}</h2>
+            <h2>Checked out: </h2>
+            {% if book.checked_out %} 
+            <span>&#9989;</span>
+            {% endif %} 
+            {% if not book.checked_out %} 
+            <span>&#10060;</span>
+            {% endif %} 
+        </div>
+
+
+
+    {% endblock %} 
