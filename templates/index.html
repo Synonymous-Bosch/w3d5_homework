@@ -21,6 +21,7 @@
     <h3><a href="/home/{{book_list.index(book)}}"> {{book.title}}, {{book.author}}</a></h3>
     {% if book.checked_out %} 
     <span>Checked out: &#9989;</span>
+
     {% endif %} 
     <div>
         <form class="form-inline" action="/home/delete/{{ book_list.index(book) }}" methods="POST">
@@ -28,8 +29,8 @@
         </form>
     </div>
     <div>
-        <form class="form-inline" action="/home/{{ book_list.index(book) }}" methods="POST">
-            <input type="radio" value="Change checked-out status" id="Check In/Out">
+        <form class="form-inline" action="/home/books/{{ book_list.index(book) }}" methods="POST">
+            <input type="radio" name="book" value="{{ loop.index0 }}" onclick="this.form.submit();"> Check-in <br>
         </form>
     </div>
 

@@ -12,8 +12,8 @@ def add_new_book(new_book):
 def delete_book(index):
     book_list.pop(index)
 
-def change_checked_out_status(index):
-    if book_list[index].checked_out == True:
-        book_list[index].checked_out = False
-    elif book_list[index].checked_out == False:
-        book_list[index].checked_out = True
+def check_out(selected_book_index):
+    if book_list[selected_book_index].checked_out == False:
+        book_list[selected_book_index].checked_out = True
+    if book_list[selected_book_index].checked_out == True:
+        book_list[selected_book_index].checked_out = False
