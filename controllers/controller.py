@@ -25,7 +25,7 @@ def delete(index):
     delete_book(int(index))
     return redirect("/home")
 
-@app.route("/home/books/<index>", methods=["POST"])
-def check_out_book(index):
-    check_out(int(index))
+@app.route("/home/books/<index>")
+def checkout(index):
+    checkout_book(int(index))
     return redirect("/home")
